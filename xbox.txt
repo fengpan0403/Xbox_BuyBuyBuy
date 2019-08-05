@@ -1,0 +1,12 @@
+window.setInterval(function(){
+	var buttonPanel = $("#buttonPanel_AppIdentityBuyButton");
+	var iframes = $("#wb_auto_blend_container");
+	if(iframes.length == 0){
+		buttonPanel.click();
+	}else{
+		var confirmButton = $("#wb_auto_blend_container").contents().find("#confirmButton");
+		var cancelButton = $("#wb_auto_blend_container").contents().find("#cancelButton");
+		if(confirmButton.length != 0) confirmButton.click();
+		else cancelButton.click();
+	}
+}, 2000);
