@@ -1,12 +1,14 @@
 window.setInterval(function(){
 	var buttonPanel = $("#buttonPanel_AppIdentityBuyButton");
-	var iframes = $("#wb_auto_blend_container");
+	var iframes = $("iframe[class='pi-full-frame']");
 	if(iframes.length == 0){
 		buttonPanel.click();
 	}else{
-		var confirmButton = $("#wb_auto_blend_container").contents().find("#confirmButton");
-		var cancelButton = $("#wb_auto_blend_container").contents().find("#cancelButton");
-		if(confirmButton.length != 0) confirmButton.click();
-		else cancelButton.click();
+		var buttons = iframes.contents().find("button");
+		if(buttons.length > 2) buttons[2].click();
+		else if (buttons.length == 1) {
+			var cancelButton = buttons[0];
+			cancelButton.click();
+		}
 	}
 }, 2000);
