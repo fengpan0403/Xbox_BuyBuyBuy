@@ -1,11 +1,11 @@
 window.setInterval(function(){
-	var buttonPanel = $("#buttonPanel_AppIdentityBuyButton");
+	var buttonPanel = $("#buttonPanel_AppIdentityBuyButton2");
 	var iframes = $("iframe[class='pi-full-frame']");
 	if(iframes.length == 0){
 		buttonPanel.click();
 	}else{
 		var buttons = iframes.contents().find("button");
-		if(buttons.length > 2) buttons[2].click();
+		if(buttons.length > 3) buttons[3].click();
 		else if (buttons.length == 1) {
 			var cancelButton = buttons[0];
 			cancelButton.click();
